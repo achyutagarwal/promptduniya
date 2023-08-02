@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+const NextConfig = {
+  images: {
+    domains: ["lh3.googleusercontent.com"],
+  },
+  webpack(config) {
+    config.experiments = {
+      ...config.experiments,
+      topLevelAwait: true,
+    };
+    return config;
+  },
+};
+module.exports = NextConfig;
